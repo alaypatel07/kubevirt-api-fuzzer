@@ -8,7 +8,7 @@ require (
 	github.com/stretchr/testify v1.8.2
 	k8s.io/api v0.26.3
 	k8s.io/apimachinery v0.26.3
-	kubevirt.io/api v0.50.0
+	kubevirt.io/api v0.59.0
 )
 
 require (
