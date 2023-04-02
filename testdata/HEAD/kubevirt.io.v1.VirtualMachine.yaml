@@ -170,10 +170,16 @@ spec:
         volumeMode: volumeModeValue
         volumeName: volumeNameValue
     status: {}
-  flavor:
+  instancetype:
+    inferFromVolume: inferFromVolumeValue
     kind: kindValue
     name: nameValue
-    profile: profileValue
+    revisionName: revisionNameValue
+  preference:
+    inferFromVolume: inferFromVolumeValue
+    kind: kindValue
+    name: nameValue
+    revisionName: revisionNameValue
   runStrategy: runStrategyValue
   running: true
   template:
@@ -390,9 +396,11 @@ spec:
           threads: 4294967289
         devices:
           autoattachGraphicsDevice: true
+          autoattachInputDevice: true
           autoattachMemBalloon: true
           autoattachPodInterface: true
           autoattachSerialConsole: true
+          autoattachVSOCK: true
           blockMultiQueue: true
           clientPassthrough: {}
           disableHotplug: true
@@ -414,15 +422,13 @@ spec:
               bus: busValue
               pciAddress: pciAddressValue
               readonly: true
-            floppy:
-              readonly: true
-              tray: trayValue
             io: ioValue
             lun:
               bus: busValue
               readonly: true
             name: nameValue
             serial: serialValue
+            shareable: true
             tag: tagValue
           filesystems:
           - name: nameValue
@@ -430,6 +436,7 @@ spec:
           gpus:
           - deviceName: deviceNameValue
             name: nameValue
+            tag: tagValue
             virtualGPUOptions:
               display:
                 enabled: true
@@ -438,12 +445,14 @@ spec:
           hostDevices:
           - deviceName: deviceNameValue
             name: nameValue
+            tag: tagValue
           inputs:
           - bus: busValue
             name: nameValue
             type: typeValue
           interfaces:
-          - bootOrder: 18446744073709551607
+          - acpiIndex: -9
+            bootOrder: 18446744073709551607
             bridge: {}
             dhcpOptions:
               bootFileName: bootFileNameValue
@@ -458,6 +467,7 @@ spec:
             masquerade: {}
             model: modelValue
             name: nameValue
+            passt: {}
             pciAddress: pciAddressValue
             ports:
             - name: nameValue
@@ -471,6 +481,7 @@ spec:
           sound:
             model: modelValue
             name: nameValue
+          tpm: {}
           useVirtioTransitional: true
           watchdog:
             i6300esb:
@@ -538,6 +549,8 @@ spec:
           serial: serialValue
           uuid: uuidValue
         ioThreadsPolicy: ioThreadsPolicyValue
+        launchSecurity:
+          sev: {}
         machine:
           type: typeValue
         memory:
@@ -615,6 +628,23 @@ spec:
         operator: operatorValue
         tolerationSeconds: 5
         value: valueValue
+      topologySpreadConstraints:
+      - labelSelector:
+          matchExpressions:
+          - key: keyValue
+            operator: operatorValue
+            values:
+            - valuesValue
+          matchLabels:
+            matchLabelsKey: matchLabelsValue
+        matchLabelKeys:
+        - matchLabelKeysValue
+        maxSkew: 1
+        minDomains: 5
+        nodeAffinityPolicy: nodeAffinityPolicyValue
+        nodeTaintsPolicy: nodeTaintsPolicyValue
+        topologyKey: topologyKeyValue
+        whenUnsatisfiable: whenUnsatisfiableValue
       volumes:
       - cloudInitConfigDrive:
           networkData: networkDataValue
@@ -670,6 +700,10 @@ spec:
           path: pathValue
           shared: true
           type: typeValue
+        memoryDump:
+          claimName: claimNameValue
+          hotpluggable: true
+          readOnly: true
         name: nameValue
         persistentVolumeClaim:
           claimName: claimNameValue
@@ -695,6 +729,14 @@ status:
     status: statusValue
     type: typeValue
   created: true
+  memoryDumpRequest:
+    claimName: claimNameValue
+    endTimestamp: "1988-01-01T01:01:01Z"
+    fileName: fileNameValue
+    message: messageValue
+    phase: phaseValue
+    remove: true
+    startTimestamp: "1986-01-01T01:01:01Z"
   printableStatus: printableStatusValue
   ready: true
   restoreInProgress: restoreInProgressValue
@@ -728,16 +770,16 @@ status:
           bus: busValue
           pciAddress: pciAddressValue
           readonly: true
-        floppy:
-          readonly: true
-          tray: trayValue
         io: ioValue
         lun:
           bus: busValue
           readonly: true
         name: nameValue
         serial: serialValue
+        shareable: true
         tag: tagValue
+      dryRun:
+      - dryRunValue
       name: nameValue
       volumeSource:
         dataVolume:
@@ -748,6 +790,8 @@ status:
           hotpluggable: true
           readOnly: true
     removeVolumeOptions:
+      dryRun:
+      - dryRunValue
       name: nameValue
   volumeSnapshotStatuses:
   - enabled: true

@@ -57,6 +57,49 @@
         "reason": "reasonValue",
         "message": "messageValue"
       }
-    ]
+    ],
+    "phaseTransitionTimestamps": [
+      {
+        "phase": "phaseValue",
+        "phaseTransitionTimestamp": "1976-01-01T01:01:01Z"
+      }
+    ],
+    "migrationState": {
+      "startTimestamp": "1986-01-01T01:01:01Z",
+      "endTimestamp": "1988-01-01T01:01:01Z",
+      "targetNodeDomainDetected": true,
+      "targetNodeAddress": "targetNodeAddressValue",
+      "targetDirectMigrationNodePorts": {
+        "targetDirectMigrationNodePortsKey": -30
+      },
+      "targetNode": "targetNodeValue",
+      "targetPod": "targetPodValue",
+      "targetAttachmentPodUID": "targetAttachmentPodUIDValue",
+      "sourceNode": "sourceNodeValue",
+      "completed": true,
+      "failed": true,
+      "abortRequested": true,
+      "abortStatus": "abortStatusValue",
+      "migrationUid": "migrationUidValue",
+      "mode": "modeValue",
+      "migrationPolicyName": "migrationPolicyNameValue",
+      "migrationConfiguration": {
+        "nodeDrainTaintKey": "nodeDrainTaintKeyValue",
+        "parallelOutboundMigrationsPerNode": 4294967263,
+        "parallelMigrationsPerCluster": 4294967268,
+        "allowAutoConverge": true,
+        "bandwidthPerMigration": "0",
+        "completionTimeoutPerGiB": -23,
+        "progressTimeout": -15,
+        "unsafeMigrationOverride": true,
+        "allowPostCopy": true,
+        "disableTLS": true,
+        "network": "networkValue"
+      },
+      "targetCPUSet": [
+        -12
+      ],
+      "targetNodeTopology": "targetNodeTopologyValue"
+    }
   }
 }

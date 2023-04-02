@@ -47,7 +47,13 @@
     "imageTag": "imageTagValue",
     "imageRegistry": "imageRegistryValue",
     "imagePullPolicy": "imagePullPolicyValue",
+    "imagePullSecrets": [
+      {
+        "name": "nameValue"
+      }
+    ],
     "monitorNamespace": "monitorNamespaceValue",
+    "serviceMonitorNamespace": "serviceMonitorNamespaceValue",
     "monitorAccount": "monitorAccountValue",
     "workloadUpdateStrategy": {
       "workloadUpdateMethods": [
@@ -119,7 +125,8 @@
         "progressTimeout": -15,
         "unsafeMigrationOverride": true,
         "allowPostCopy": true,
-        "disableTLS": true
+        "disableTLS": true,
+        "network": "networkValue"
       },
       "machineType": "machineTypeValue",
       "network": {
@@ -137,6 +144,7 @@
         "sku": "skuValue",
         "family": "familyValue"
       },
+      "evictionStrategy": "evictionStrategyValue",
       "supportedGuestAgentVersions": [
         "supportedGuestAgentVersionsValue"
       ],
@@ -160,6 +168,22 @@
       "mediatedDevicesConfiguration": {
         "mediatedDevicesTypes": [
           "mediatedDevicesTypesValue"
+        ],
+        "mediatedDeviceTypes": [
+          "mediatedDeviceTypesValue"
+        ],
+        "nodeMediatedDeviceTypes": [
+          {
+            "nodeSelector": {
+              "nodeSelectorKey": "nodeSelectorValue"
+            },
+            "mediatedDevicesTypes": [
+              "mediatedDevicesTypesValue"
+            ],
+            "mediatedDeviceTypes": [
+              "mediatedDeviceTypesValue"
+            ]
+          }
         ]
       },
       "minCPUModel": "minCPUModelValue",
@@ -204,6 +228,20 @@
               "qps": -3,
               "burst": -5
             }
+          }
+        }
+      },
+      "tlsConfiguration": {
+        "minTLSVersion": "minTLSVersionValue",
+        "ciphers": [
+          "ciphersValue"
+        ]
+      },
+      "seccompConfiguration": {
+        "virtualMachineInstanceProfile": {
+          "customProfile": {
+            "localhostProfile": "localhostProfileValue",
+            "runtimeDefaultProfile": true
           }
         }
       }
@@ -700,6 +738,7 @@
     "observedDeploymentConfig": "observedDeploymentConfigValue",
     "observedDeploymentID": "observedDeploymentIDValue",
     "outdatedVirtualMachineInstanceWorkloads": -39,
+    "observedGeneration": -18,
     "generations": [
       {
         "group": "groupValue",

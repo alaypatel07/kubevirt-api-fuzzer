@@ -42,4 +42,40 @@ status:
     reason: reasonValue
     status: statusValue
     type: typeValue
+  migrationState:
+    abortRequested: true
+    abortStatus: abortStatusValue
+    completed: true
+    endTimestamp: "1988-01-01T01:01:01Z"
+    failed: true
+    migrationConfiguration:
+      allowAutoConverge: true
+      allowPostCopy: true
+      bandwidthPerMigration: "0"
+      completionTimeoutPerGiB: -23
+      disableTLS: true
+      network: networkValue
+      nodeDrainTaintKey: nodeDrainTaintKeyValue
+      parallelMigrationsPerCluster: 4294967268
+      parallelOutboundMigrationsPerNode: 4294967263
+      progressTimeout: -15
+      unsafeMigrationOverride: true
+    migrationPolicyName: migrationPolicyNameValue
+    migrationUid: migrationUidValue
+    mode: modeValue
+    sourceNode: sourceNodeValue
+    startTimestamp: "1986-01-01T01:01:01Z"
+    targetAttachmentPodUID: targetAttachmentPodUIDValue
+    targetCPUSet:
+    - -12
+    targetDirectMigrationNodePorts:
+      targetDirectMigrationNodePortsKey: -30
+    targetNode: targetNodeValue
+    targetNodeAddress: targetNodeAddressValue
+    targetNodeDomainDetected: true
+    targetNodeTopology: targetNodeTopologyValue
+    targetPod: targetPodValue
   phase: phaseValue
+  phaseTransitionTimestamps:
+  - phase: phaseValue
+    phaseTransitionTimestamp: "1976-01-01T01:01:01Z"

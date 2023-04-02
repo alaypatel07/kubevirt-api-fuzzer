@@ -228,10 +228,6 @@
               "bus": "busValue",
               "readonly": true
             },
-            "floppy": {
-              "readonly": true,
-              "tray": "trayValue"
-            },
             "cdrom": {
               "bus": "busValue",
               "readonly": true,
@@ -251,7 +247,8 @@
               "matchVolume": {
                 "enabled": true
               }
-            }
+            },
+            "shareable": true
           }
         ],
         "watchdog": {
@@ -269,6 +266,7 @@
             "masquerade": {},
             "sriov": {},
             "macvtap": {},
+            "passt": {},
             "ports": [
               {
                 "name": "nameValue",
@@ -292,7 +290,8 @@
                 }
               ]
             },
-            "tag": "tagValue"
+            "tag": "tagValue",
+            "acpiIndex": -9
           }
         ],
         "inputs": [
@@ -306,6 +305,8 @@
         "autoattachGraphicsDevice": true,
         "autoattachSerialConsole": true,
         "autoattachMemBalloon": true,
+        "autoattachInputDevice": true,
+        "autoattachVSOCK": true,
         "rng": {},
         "blockMultiQueue": true,
         "networkInterfaceMultiqueue": true,
@@ -320,7 +321,8 @@
                   "enabled": true
                 }
               }
-            }
+            },
+            "tag": "tagValue"
           }
         ],
         "filesystems": [
@@ -332,14 +334,16 @@
         "hostDevices": [
           {
             "name": "nameValue",
-            "deviceName": "deviceNameValue"
+            "deviceName": "deviceNameValue",
+            "tag": "tagValue"
           }
         ],
         "clientPassthrough": {},
         "sound": {
           "name": "nameValue",
           "model": "modelValue"
-        }
+        },
+        "tpm": {}
       },
       "ioThreadsPolicy": "ioThreadsPolicyValue",
       "chassis": {
@@ -348,6 +352,9 @@
         "serial": "serialValue",
         "asset": "assetValue",
         "sku": "skuValue"
+      },
+      "launchSecurity": {
+        "sev": {}
       }
     }
   }

@@ -215,10 +215,6 @@
               "bus": "busValue",
               "readonly": true
             },
-            "floppy": {
-              "readonly": true,
-              "tray": "trayValue"
-            },
             "cdrom": {
               "bus": "busValue",
               "readonly": true,
@@ -238,7 +234,8 @@
               "matchVolume": {
                 "enabled": true
               }
-            }
+            },
+            "shareable": true
           }
         ],
         "watchdog": {
@@ -256,6 +253,7 @@
             "masquerade": {},
             "sriov": {},
             "macvtap": {},
+            "passt": {},
             "ports": [
               {
                 "name": "nameValue",
@@ -279,7 +277,8 @@
                 }
               ]
             },
-            "tag": "tagValue"
+            "tag": "tagValue",
+            "acpiIndex": -9
           }
         ],
         "inputs": [
@@ -293,6 +292,8 @@
         "autoattachGraphicsDevice": true,
         "autoattachSerialConsole": true,
         "autoattachMemBalloon": true,
+        "autoattachInputDevice": true,
+        "autoattachVSOCK": true,
         "rng": {},
         "blockMultiQueue": true,
         "networkInterfaceMultiqueue": true,
@@ -307,7 +308,8 @@
                   "enabled": true
                 }
               }
-            }
+            },
+            "tag": "tagValue"
           }
         ],
         "filesystems": [
@@ -319,14 +321,16 @@
         "hostDevices": [
           {
             "name": "nameValue",
-            "deviceName": "deviceNameValue"
+            "deviceName": "deviceNameValue",
+            "tag": "tagValue"
           }
         ],
         "clientPassthrough": {},
         "sound": {
           "name": "nameValue",
           "model": "modelValue"
-        }
+        },
+        "tpm": {}
       },
       "ioThreadsPolicy": "ioThreadsPolicyValue",
       "chassis": {
@@ -335,6 +339,9 @@
         "serial": "serialValue",
         "asset": "assetValue",
         "sku": "skuValue"
+      },
+      "launchSecurity": {
+        "sev": {}
       }
     },
     "nodeSelector": {
@@ -557,6 +564,33 @@
         "tolerationSeconds": 5
       }
     ],
+    "topologySpreadConstraints": [
+      {
+        "maxSkew": 1,
+        "topologyKey": "topologyKeyValue",
+        "whenUnsatisfiable": "whenUnsatisfiableValue",
+        "labelSelector": {
+          "matchLabels": {
+            "matchLabelsKey": "matchLabelsValue"
+          },
+          "matchExpressions": [
+            {
+              "key": "keyValue",
+              "operator": "operatorValue",
+              "values": [
+                "valuesValue"
+              ]
+            }
+          ]
+        },
+        "minDomains": 5,
+        "nodeAffinityPolicy": "nodeAffinityPolicyValue",
+        "nodeTaintsPolicy": "nodeTaintsPolicyValue",
+        "matchLabelKeys": [
+          "matchLabelKeysValue"
+        ]
+      }
+    ],
     "evictionStrategy": "evictionStrategyValue",
     "startStrategy": "startStrategyValue",
     "terminationGracePeriodSeconds": -29,
@@ -656,7 +690,12 @@
         "serviceAccount": {
           "serviceAccountName": "serviceAccountNameValue"
         },
-        "downwardMetrics": {}
+        "downwardMetrics": {},
+        "memoryDump": {
+          "claimName": "claimNameValue",
+          "readOnly": true,
+          "hotpluggable": true
+        }
       }
     ],
     "livenessProbe": {
@@ -805,7 +844,9 @@
         "ipAddresses": [
           "ipAddressesValue"
         ],
-        "interfaceName": "interfaceNameValue"
+        "interfaceName": "interfaceNameValue",
+        "infoSource": "infoSourceValue",
+        "queueCount": -10
       }
     ],
     "guestOSInfo": {
@@ -835,7 +876,25 @@
       "abortRequested": true,
       "abortStatus": "abortStatusValue",
       "migrationUid": "migrationUidValue",
-      "mode": "modeValue"
+      "mode": "modeValue",
+      "migrationPolicyName": "migrationPolicyNameValue",
+      "migrationConfiguration": {
+        "nodeDrainTaintKey": "nodeDrainTaintKeyValue",
+        "parallelOutboundMigrationsPerNode": 4294967263,
+        "parallelMigrationsPerCluster": 4294967268,
+        "allowAutoConverge": true,
+        "bandwidthPerMigration": "0",
+        "completionTimeoutPerGiB": -23,
+        "progressTimeout": -15,
+        "unsafeMigrationOverride": true,
+        "allowPostCopy": true,
+        "disableTLS": true,
+        "network": "networkValue"
+      },
+      "targetCPUSet": [
+        -12
+      ],
+      "targetNodeTopology": "targetNodeTopologyValue"
     },
     "migrationMethod": "migrationMethodValue",
     "migrationTransport": "migrationTransportValue",
@@ -860,6 +919,9 @@
           "capacity": {
             "capacityKey": "0"
           },
+          "requests": {
+            "requestsKey": "0"
+          },
           "preallocated": true,
           "filesystemOverhead": "filesystemOverheadValue"
         },
@@ -867,13 +929,22 @@
           "attachPodName": "attachPodNameValue",
           "attachPodUID": "attachPodUIDValue"
         },
-        "size": -4
+        "size": -4,
+        "memoryDumpVolume": {
+          "startTimestamp": "1986-01-01T01:01:01Z",
+          "endTimestamp": "1988-01-01T01:01:01Z",
+          "claimName": "claimNameValue",
+          "targetFileName": "targetFileNameValue"
+        }
       }
     ],
     "fsFreezeStatus": "fsFreezeStatusValue",
     "topologyHints": {
       "tscFrequency": -12
     },
-    "virtualMachineRevisionName": "virtualMachineRevisionNameValue"
+    "virtualMachineRevisionName": "virtualMachineRevisionNameValue",
+    "runtimeUser": 18446744073709551605,
+    "VSOCKCID": 4294967288,
+    "selinuxContext": "selinuxContextValue"
   }
 }

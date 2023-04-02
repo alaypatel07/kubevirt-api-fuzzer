@@ -83,6 +83,7 @@ spec:
       useEmulation: true
     emulatedMachines:
     - emulatedMachinesValue
+    evictionStrategy: evictionStrategyValue
     handlerConfiguration:
       restClient:
         rateLimiter:
@@ -92,8 +93,17 @@ spec:
     imagePullPolicy: imagePullPolicyValue
     machineType: machineTypeValue
     mediatedDevicesConfiguration:
+      mediatedDeviceTypes:
+      - mediatedDeviceTypesValue
       mediatedDevicesTypes:
       - mediatedDevicesTypesValue
+      nodeMediatedDeviceTypes:
+      - mediatedDeviceTypes:
+        - mediatedDeviceTypesValue
+        mediatedDevicesTypes:
+        - mediatedDevicesTypesValue
+        nodeSelector:
+          nodeSelectorKey: nodeSelectorValue
     memBalloonStatsPeriod: 4294967275
     migrations:
       allowAutoConverge: true
@@ -101,6 +111,7 @@ spec:
       bandwidthPerMigration: "0"
       completionTimeoutPerGiB: -23
       disableTLS: true
+      network: networkValue
       nodeDrainTaintKey: nodeDrainTaintKeyValue
       parallelMigrationsPerCluster: 4294967268
       parallelOutboundMigrationsPerNode: 4294967263
@@ -123,6 +134,11 @@ spec:
       - externalResourceProvider: true
         pciVendorSelector: pciVendorSelectorValue
         resourceName: resourceNameValue
+    seccompConfiguration:
+      virtualMachineInstanceProfile:
+        customProfile:
+          localhostProfile: localhostProfileValue
+          runtimeDefaultProfile: true
     selinuxLauncherType: selinuxLauncherTypeValue
     smbios:
       family: familyValue
@@ -132,6 +148,10 @@ spec:
       version: versionValue
     supportedGuestAgentVersions:
     - supportedGuestAgentVersionsValue
+    tlsConfiguration:
+      ciphers:
+      - ciphersValue
+      minTLSVersion: minTLSVersionValue
     virtualMachineInstancesPerNode: -30
     webhookConfiguration:
       restClient:
@@ -153,6 +173,8 @@ spec:
       resourceType: resourceTypeValue
       type: typeValue
   imagePullPolicy: imagePullPolicyValue
+  imagePullSecrets:
+  - name: nameValue
   imageRegistry: imageRegistryValue
   imageTag: imageTagValue
   infra:
@@ -284,6 +306,7 @@ spec:
   productComponent: productComponentValue
   productName: productNameValue
   productVersion: productVersionValue
+  serviceMonitorNamespace: serviceMonitorNamespaceValue
   uninstallStrategy: uninstallStrategyValue
   workloadUpdateStrategy:
     batchEvictionInterval: 1ns
@@ -431,6 +454,7 @@ status:
     resource: resourceValue
   observedDeploymentConfig: observedDeploymentConfigValue
   observedDeploymentID: observedDeploymentIDValue
+  observedGeneration: -18
   observedKubeVirtRegistry: observedKubeVirtRegistryValue
   observedKubeVirtVersion: observedKubeVirtVersionValue
   operatorVersion: operatorVersionValue

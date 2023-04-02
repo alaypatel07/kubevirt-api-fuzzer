@@ -46,10 +46,17 @@
   "spec": {
     "running": true,
     "runStrategy": "runStrategyValue",
-    "flavor": {
+    "instancetype": {
       "name": "nameValue",
       "kind": "kindValue",
-      "profile": "profileValue"
+      "revisionName": "revisionNameValue",
+      "inferFromVolume": "inferFromVolumeValue"
+    },
+    "preference": {
+      "name": "nameValue",
+      "kind": "kindValue",
+      "revisionName": "revisionNameValue",
+      "inferFromVolume": "inferFromVolumeValue"
     },
     "template": {
       "metadata": {
@@ -266,10 +273,6 @@
                   "bus": "busValue",
                   "readonly": true
                 },
-                "floppy": {
-                  "readonly": true,
-                  "tray": "trayValue"
-                },
                 "cdrom": {
                   "bus": "busValue",
                   "readonly": true,
@@ -289,7 +292,8 @@
                   "matchVolume": {
                     "enabled": true
                   }
-                }
+                },
+                "shareable": true
               }
             ],
             "watchdog": {
@@ -307,6 +311,7 @@
                 "masquerade": {},
                 "sriov": {},
                 "macvtap": {},
+                "passt": {},
                 "ports": [
                   {
                     "name": "nameValue",
@@ -330,7 +335,8 @@
                     }
                   ]
                 },
-                "tag": "tagValue"
+                "tag": "tagValue",
+                "acpiIndex": -9
               }
             ],
             "inputs": [
@@ -344,6 +350,8 @@
             "autoattachGraphicsDevice": true,
             "autoattachSerialConsole": true,
             "autoattachMemBalloon": true,
+            "autoattachInputDevice": true,
+            "autoattachVSOCK": true,
             "rng": {},
             "blockMultiQueue": true,
             "networkInterfaceMultiqueue": true,
@@ -358,7 +366,8 @@
                       "enabled": true
                     }
                   }
-                }
+                },
+                "tag": "tagValue"
               }
             ],
             "filesystems": [
@@ -370,14 +379,16 @@
             "hostDevices": [
               {
                 "name": "nameValue",
-                "deviceName": "deviceNameValue"
+                "deviceName": "deviceNameValue",
+                "tag": "tagValue"
               }
             ],
             "clientPassthrough": {},
             "sound": {
               "name": "nameValue",
               "model": "modelValue"
-            }
+            },
+            "tpm": {}
           },
           "ioThreadsPolicy": "ioThreadsPolicyValue",
           "chassis": {
@@ -386,6 +397,9 @@
             "serial": "serialValue",
             "asset": "assetValue",
             "sku": "skuValue"
+          },
+          "launchSecurity": {
+            "sev": {}
           }
         },
         "nodeSelector": {
@@ -608,6 +622,33 @@
             "tolerationSeconds": 5
           }
         ],
+        "topologySpreadConstraints": [
+          {
+            "maxSkew": 1,
+            "topologyKey": "topologyKeyValue",
+            "whenUnsatisfiable": "whenUnsatisfiableValue",
+            "labelSelector": {
+              "matchLabels": {
+                "matchLabelsKey": "matchLabelsValue"
+              },
+              "matchExpressions": [
+                {
+                  "key": "keyValue",
+                  "operator": "operatorValue",
+                  "values": [
+                    "valuesValue"
+                  ]
+                }
+              ]
+            },
+            "minDomains": 5,
+            "nodeAffinityPolicy": "nodeAffinityPolicyValue",
+            "nodeTaintsPolicy": "nodeTaintsPolicyValue",
+            "matchLabelKeys": [
+              "matchLabelKeysValue"
+            ]
+          }
+        ],
         "evictionStrategy": "evictionStrategyValue",
         "startStrategy": "startStrategyValue",
         "terminationGracePeriodSeconds": -29,
@@ -707,7 +748,12 @@
             "serviceAccount": {
               "serviceAccountName": "serviceAccountNameValue"
             },
-            "downwardMetrics": {}
+            "downwardMetrics": {},
+            "memoryDump": {
+              "claimName": "claimNameValue",
+              "readOnly": true,
+              "hotpluggable": true
+            }
           }
         ],
         "livenessProbe": {
@@ -1065,10 +1111,6 @@
               "bus": "busValue",
               "readonly": true
             },
-            "floppy": {
-              "readonly": true,
-              "tray": "trayValue"
-            },
             "cdrom": {
               "bus": "busValue",
               "readonly": true,
@@ -1088,7 +1130,8 @@
               "matchVolume": {
                 "enabled": true
               }
-            }
+            },
+            "shareable": true
           },
           "volumeSource": {
             "persistentVolumeClaim": {
@@ -1100,10 +1143,16 @@
               "name": "nameValue",
               "hotpluggable": true
             }
-          }
+          },
+          "dryRun": [
+            "dryRunValue"
+          ]
         },
         "removeVolumeOptions": {
-          "name": "nameValue"
+          "name": "nameValue",
+          "dryRun": [
+            "dryRunValue"
+          ]
         }
       }
     ],
@@ -1118,6 +1167,15 @@
       "consecutiveFailCount": -20,
       "lastFailedVMIUID": "lastFailedVMIUIDValue",
       "retryAfterTimestamp": "1981-01-01T01:01:01Z"
+    },
+    "memoryDumpRequest": {
+      "claimName": "claimNameValue",
+      "phase": "phaseValue",
+      "remove": true,
+      "startTimestamp": "1986-01-01T01:01:01Z",
+      "endTimestamp": "1988-01-01T01:01:01Z",
+      "fileName": "fileNameValue",
+      "message": "messageValue"
     }
   }
 }
