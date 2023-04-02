@@ -1,0 +1,245 @@
+apiVersion: kubevirt.io/v1
+kind: VirtualMachineInstancePreset
+metadata:
+  annotations:
+    annotationsKey: annotationsValue
+  creationTimestamp: "2008-01-01T01:01:01Z"
+  deletionGracePeriodSeconds: 10
+  deletionTimestamp: "2009-01-01T01:01:01Z"
+  finalizers:
+  - finalizersValue
+  generateName: generateNameValue
+  generation: 7
+  labels:
+    labelsKey: labelsValue
+  managedFields:
+  - apiVersion: apiVersionValue
+    fieldsType: fieldsTypeValue
+    fieldsV1: {}
+    manager: managerValue
+    operation: operationValue
+    subresource: subresourceValue
+    time: "2004-01-01T01:01:01Z"
+  name: nameValue
+  namespace: namespaceValue
+  ownerReferences:
+  - apiVersion: apiVersionValue
+    blockOwnerDeletion: true
+    controller: true
+    kind: kindValue
+    name: nameValue
+    uid: uidValue
+  resourceVersion: resourceVersionValue
+  selfLink: selfLinkValue
+  uid: uidValue
+spec:
+  domain:
+    chassis:
+      asset: assetValue
+      manufacturer: manufacturerValue
+      serial: serialValue
+      sku: skuValue
+      version: versionValue
+    clock:
+      timer:
+        hpet:
+          present: true
+          tickPolicy: tickPolicyValue
+        hyperv:
+          present: true
+        kvm:
+          present: true
+        pit:
+          present: true
+          tickPolicy: tickPolicyValue
+        rtc:
+          present: true
+          tickPolicy: tickPolicyValue
+          track: trackValue
+      timezone: timezoneValue
+      utc:
+        offsetSeconds: -13
+    cpu:
+      cores: 4294967291
+      dedicatedCpuPlacement: true
+      features:
+      - name: nameValue
+        policy: policyValue
+      isolateEmulatorThread: true
+      model: modelValue
+      numa:
+        guestMappingPassthrough: {}
+      realtime:
+        mask: maskValue
+      sockets: 4294967289
+      threads: 4294967289
+    devices:
+      autoattachGraphicsDevice: true
+      autoattachMemBalloon: true
+      autoattachPodInterface: true
+      autoattachSerialConsole: true
+      blockMultiQueue: true
+      clientPassthrough: {}
+      disableHotplug: true
+      disks:
+      - blockSize:
+          custom:
+            logical: 18446744073709551609
+            physical: 18446744073709551608
+          matchVolume:
+            enabled: true
+        bootOrder: 18446744073709551607
+        cache: cacheValue
+        cdrom:
+          bus: busValue
+          readonly: true
+          tray: trayValue
+        dedicatedIOThread: true
+        disk:
+          bus: busValue
+          pciAddress: pciAddressValue
+          readonly: true
+        floppy:
+          readonly: true
+          tray: trayValue
+        io: ioValue
+        lun:
+          bus: busValue
+          readonly: true
+        name: nameValue
+        serial: serialValue
+        tag: tagValue
+      filesystems:
+      - name: nameValue
+        virtiofs: {}
+      gpus:
+      - deviceName: deviceNameValue
+        name: nameValue
+        virtualGPUOptions:
+          display:
+            enabled: true
+            ramFB:
+              enabled: true
+      hostDevices:
+      - deviceName: deviceNameValue
+        name: nameValue
+      inputs:
+      - bus: busValue
+        name: nameValue
+        type: typeValue
+      interfaces:
+      - bootOrder: 18446744073709551607
+        bridge: {}
+        dhcpOptions:
+          bootFileName: bootFileNameValue
+          ntpServers:
+          - ntpServersValue
+          privateOptions:
+          - option: -6
+            value: valueValue
+          tftpServerName: tftpServerNameValue
+        macAddress: macAddressValue
+        macvtap: {}
+        masquerade: {}
+        model: modelValue
+        name: nameValue
+        pciAddress: pciAddressValue
+        ports:
+        - name: nameValue
+          port: -4
+          protocol: protocolValue
+        slirp: {}
+        sriov: {}
+        tag: tagValue
+      networkInterfaceMultiqueue: true
+      rng: {}
+      sound:
+        model: modelValue
+        name: nameValue
+      useVirtioTransitional: true
+      watchdog:
+        i6300esb:
+          action: actionValue
+        name: nameValue
+    features:
+      acpi:
+        enabled: true
+      apic:
+        enabled: true
+        endOfInterrupt: true
+      hyperv:
+        evmcs:
+          enabled: true
+        frequencies:
+          enabled: true
+        ipi:
+          enabled: true
+        reenlightenment:
+          enabled: true
+        relaxed:
+          enabled: true
+        reset:
+          enabled: true
+        runtime:
+          enabled: true
+        spinlocks:
+          enabled: true
+          spinlocks: 4294967287
+        synic:
+          enabled: true
+        synictimer:
+          direct:
+            enabled: true
+          enabled: true
+        tlbflush:
+          enabled: true
+        vapic:
+          enabled: true
+        vendorid:
+          enabled: true
+          vendorid: vendoridValue
+        vpindex:
+          enabled: true
+      kvm:
+        hidden: true
+      pvspinlock:
+        enabled: true
+      smm:
+        enabled: true
+    firmware:
+      bootloader:
+        bios:
+          useSerial: true
+        efi:
+          secureBoot: true
+      kernelBoot:
+        container:
+          image: imageValue
+          imagePullPolicy: imagePullPolicyValue
+          imagePullSecret: imagePullSecretValue
+          initrdPath: initrdPathValue
+          kernelPath: kernelPathValue
+        kernelArgs: kernelArgsValue
+      serial: serialValue
+      uuid: uuidValue
+    ioThreadsPolicy: ioThreadsPolicyValue
+    machine:
+      type: typeValue
+    memory:
+      guest: "0"
+      hugepages:
+        pageSize: pageSizeValue
+    resources:
+      limits:
+        limitsKey: "0"
+      overcommitGuestOverhead: true
+      requests:
+        requestsKey: "0"
+  selector:
+    matchExpressions:
+    - key: keyValue
+      operator: operatorValue
+      values:
+      - valuesValue
+    matchLabels:
+      matchLabelsKey: matchLabelsValue
