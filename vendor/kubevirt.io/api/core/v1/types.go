@@ -260,7 +260,7 @@ type VirtualMachineInstanceStatus struct {
 
 	// RuntimeUser is used to determine what user will be used in launcher
 	// +optional
-	RuntimeUser uint64 `json:"runtimeUser"`
+	RuntimeUser uint64 `json:"runtimeUser,omitempty"`
 
 	// VSOCKCID is used to track the allocated VSOCK CID in the VM.
 	// +optional
