@@ -93,6 +93,10 @@ The above output shows that for VirtualMachineInstance:
 1. api-field: `spec.domain.devices.disks.floppy` was dropped. [ref-1](https://github.com/kubevirt/kubevirt/issues/2016)[ref-2](https://github.com/kubevirt/kubevirt/pull/2164)
 2. api-field: `status.runtimeUser` field was added[ref-3](https://github.com/kubevirt/kubevirt/pull/6709)
 
+While the api-field was intentional (so can be ignored), the second seems like it was a human error. Upon identifying the
+error using this tool, a fix was pushed via [this commit](https://gitlab-master.nvidia.com/alayp/kubevirt-fuzzer/-/merge_requests/1/diffs?commit_id=36d0f872fd9f7d691d8ecaf0db3b77e25f5ba951)
+This demonstrates the usability of this tool in automation and during the upgrade process during downstream testing.
+
 Using this:
 1. API reviewers can say if changes in current version will break older clients upon upgrade
 2. During upgrades, vendors can check the API changes going into the upgrade using simple differ and get a better
