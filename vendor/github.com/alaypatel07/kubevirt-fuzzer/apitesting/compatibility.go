@@ -1,7 +1,7 @@
 /*
 This is largely inspired from https://github.com/kubernetes/apimachinery/blob/v0.26.3/pkg/api/apitesting/roundtrip/compatibility.go
 
-and changed according to requirements of Kubevirt API
+and changed according to requirements of KubeVirt API
 */
 
 package apitesting
