@@ -102,3 +102,17 @@ Using this:
 1. API reviewers can say if changes in current version will break older clients upon upgrade
 2. During upgrades, vendors can check the API changes going into the upgrade using simple differ and get a better
    synopsis of what is failing during upgrade.
+
+Next Steps:
+
+1. Ways to Update TestData: 
+    1. Version Control: When a new version of KubeVirt is released, it is essential to update the test data to reflect changes and new features introduced in that version.The test data should include scenarios that cover upto the last three versions(n-3) of KubeVirt, allowing for backward compatibility testing and ensuring that the new version does not break functionalities in the older versions.
+
+         1. Remove the Oldest Version TestData :  To manage the scope of the test data effectively and avoid an overload of legacy test scenarios, the oldest version of the test data should be removed as new versions are added. 
+         2. Addition of New TestData (Latest Version): With the release of a new version, new test data specific to this version should be added.
+
+    2. On Demand Update: Whenever changes to any components identified, developers or testers can review the current test cases and the associated test data if they will still be valid for the changes or else update the testdata.
+
+    3. Come up with data generation techniques providing invalid, unexpected, or random data as inputs. (least priority)
+
+2. Integrate these unit tests to the CI/CD pipelines.
